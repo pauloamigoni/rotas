@@ -797,8 +797,6 @@ Obs: a Imagem vai ser apagada do Storage
 
 ---
 
----
-
 | Rota                    | Método | Requer Autenticação |
 | ----------------------- | :----- | :-----------------: |
 | /services/:user_id/user | GET    |        :-1:         |
@@ -920,6 +918,70 @@ Obs: a Imagem vai ser apagada do Storage
     }
   ]
 }
+```
+
+---
+
+| Rota                            | Método | Requer Autenticação |
+| ------------------------------- | :----- | :-----------------: |
+| /services/:service_id/categorie | GET    |        :-1:         |
+
+:speech_balloon: Lista todos serviços de uma determinada categoria
+
+> Retorno
+
+```
+[
+  {
+    "id": "b187d99f-f1b8-4a8e-be39-e8ce1c58df9f",
+    "user_id": "af070e92-f0ef-4a66-8ed3-431ac7d7e7de",
+    "name": "ARRUMA CERTA CAR",
+    "description": "AUTO MECANICA E LAVAGEM EM GERAL",
+    "address": "Antonio de Cadastro, 710",
+    "city": "LIMEIRA",
+    "state": "SP",
+    "country": null,
+    "phone": "199922222266",
+    "celphone": "19992250066",
+    "email": "paulo.amigoni@gmail.com",
+    "site": "www.jhonjoe.com.br",
+    "link_facebook": "/jhonjoe",
+    "link_instagram": "/jhonjoe",
+    "opening_hours": "08hrs às 18hrs - horario de Brasilia",
+    "aproved": "S",
+    "denunciation": 0,
+    "iswhats": true,
+    "categories_id": "2e1cc22a-6393-45a0-b061-c17e0a9aafdd",
+    "categories_others": null,
+    "user": {
+      "id": "af070e92-f0ef-4a66-8ed3-431ac7d7e7de",
+      "name": "Jhon Joe",
+      "email": "jhon@email.com",
+      "avatar": "15d1237cb3b30d3562dc-WhatsApp Image 2019-03-13 at 10.28.52.jpeg",
+      "phone": "551999999999",
+      "celphone": "551999999999",
+      "address": "ANTONIO DE ALMEIDA",
+      "city": "ARARAS",
+      "country": null,
+      "state": "SP",
+      "iswhats": true,
+      "avatar_url": "http://www.mandatrampo.com.br:3333/files/15d1237cb3b30d3562dc-WhatsApp Image 2019-03-13 at 10.28.52.jpeg"
+    },
+    "categories": {
+      "id": "2e1cc22a-6393-45a0-b061-c17e0a9aafdd",
+      "name": "MECANICO"
+    },
+    "photo": [
+      {
+        "id": "319f3c27-6251-43db-9e02-d803dcf23645",
+        "services_id": "b187d99f-f1b8-4a8e-be39-e8ce1c58df9f",
+        "url": "5a3983ac154cc7872573-P_20190721_163128_vHDR_On.jpg",
+        "local_url": "http://www.mandatrampo.com.br:3333/files/5a3983ac154cc7872573-P_20190721_163128_vHDR_On.jpg"
+      }
+    ]
+  }
+  ...
+]
 ```
 
 ---
