@@ -144,8 +144,7 @@ Obs: vai ser gerado um ID ... O acesso deve ser pelo login e senha.
 }
 ```
 
-Obs: O Token deve ser passado em rotas que reque autenticação.
----
+## Obs: O Token deve ser passado em rotas que reque autenticação.
 
 | Rota     | Método | Requer Autenticação | Tipo de Autenticação |
 | -------- | :----- | :-----------------: | :------------------: |
@@ -221,8 +220,6 @@ Enviar o file como input:name ( avatar )
 
 ---
 
-
-
 | Rota       | Método | Requer Autenticação | Tipo de Autenticação |
 | ---------- | :----- | :-----------------: | :------------------: |
 | /categorie | POST   |     :thumbsup:      |    Bearer - Token    |
@@ -248,10 +245,6 @@ Enviar o file como input:name ( avatar )
 
 ---
 
-
-
-
-
 | Rota        | Método | Requer Autenticação | Tipo de Autenticação |
 | ----------- | :----- | :-----------------: | :------------------: |
 | /profession | POST   |     :thumbsup:      |    Bearer - Token    |
@@ -276,9 +269,6 @@ Enviar o file como input:name ( avatar )
 ```
 
 ---
-
-
-
 
 | Rota        | Método | Requer Autenticação | Tipo de Autenticação |
 | ----------- | :----- | :-----------------: | :------------------: |
@@ -316,13 +306,9 @@ Enviar o file como input:name ( avatar )
 
 ---
 
-
-
-
-
-| Rota        | Método | Requer Autenticação | Tipo de Autenticação |
-| ----------- | :----- | :-----------------: | :------------------: |
-| /services   | POST   |     :thumbsup:      |    Bearer - Token    |
+| Rota      | Método | Requer Autenticação | Tipo de Autenticação |
+| --------- | :----- | :-----------------: | :------------------: |
+| /services | POST   |     :thumbsup:      |    Bearer - Token    |
 
 :speech_balloon: Cadastro de serviços
 
@@ -373,9 +359,6 @@ Enviar o file como input:name ( avatar )
 
 ---
 
-
-
-
 | Rota            | Método | Requer Autenticação | Tipo de Autenticação | Requer Parametros  |
 | --------------- | :----- | :-----------------: | :------------------: | :----------------: |
 | /services/photo | POST   |     :thumbsup:      |    Bearer - Token    | Multpart/form-data |
@@ -401,14 +384,31 @@ e Enviar input:name ( service_id ) -> ID do serviço que pretende adicionar a im
 
 ---
 
+| Rota               | Método | Requer Autenticação | Tipo de Autenticação |
+| ------------------ | :----- | :-----------------: | :------------------: |
+| /services/delphoto | POST   |     :thumbsup:      |    Bearer - Token    |
 
+:speech_balloon: Deletar Foto do Serviço
 
+> Enviar
 
+{
+"id": "247b40ac-5429-4a3b-9b78-55db7e508629"
+}
 
+> Retorno
 
-| Rota        | Método | Requer Autenticação | Tipo de Autenticação |
-| ----------- | :----- | :-----------------: | :------------------: |
-| /services   | PUT    |     :thumbsup:      |    Bearer - Token    |
+```
+Retorna mensagem que apagou a imagem
+```
+
+Obs: a Imagem vai ser apagada do Storage
+
+---
+
+| Rota      | Método | Requer Autenticação | Tipo de Autenticação |
+| --------- | :----- | :-----------------: | :------------------: |
+| /services | PUT    |     :thumbsup:      |    Bearer - Token    |
 
 :speech_balloon: Altera Serviços
 
@@ -490,9 +490,6 @@ e Enviar input:name ( service_id ) -> ID do serviço que pretende adicionar a im
 
 ---
 
-
-
-
 | Rota        | Método | Requer Autenticação | Tipo de Autenticação |
 | ----------- | :----- | :-----------------: | :------------------: |
 | /curriculum | PUT    |     :thumbsup:      |    Bearer - Token    |
@@ -533,19 +530,13 @@ e Enviar input:name ( service_id ) -> ID do serviço que pretende adicionar a im
 
 ---
 
-
-
 ### Rotas de Listagem
-
-
-
 
 | Rota        | Método | Requer Autenticação |
 | ----------- | :----- | :-----------------: |
 | /profession | GET    |        :-1:         |
 
 :speech_balloon: Lista todas as Profissões
-
 
 > Retorno
 
@@ -563,19 +554,13 @@ e Enviar input:name ( service_id ) -> ID do serviço que pretende adicionar a im
 ]
 ```
 
-
 ---
 
-
-
-
-
-| Rota        | Método | Requer Autenticação |
-| ----------- | :----- | :-----------------: |
-| /categorie  | GET    |        :-1:         |
+| Rota       | Método | Requer Autenticação |
+| ---------- | :----- | :-----------------: |
+| /categorie | GET    |        :-1:         |
 
 :speech_balloon: Lista todas as Categorias
-
 
 > Retorno
 
@@ -593,12 +578,7 @@ e Enviar input:name ( service_id ) -> ID do serviço que pretende adicionar a im
 ]
 ```
 
-
 ---
-
-
-
-
 
 | Rota        | Método | Requer Autenticação |
 | ----------- | :----- | :-----------------: |
@@ -606,42 +586,49 @@ e Enviar input:name ( service_id ) -> ID do serviço que pretende adicionar a im
 
 :speech_balloon: Lista todos CV
 
-
 > Retorno
 
 ```
 [
- {
-    "id": "6dff0225-d491-43ec-b817-510c2a3e24c7",
-    "user_id": "886657e7-6b64-4295-b206-c2e231d1c8fe",
+{
+    "id": "7b319295-da16-4bb0-adb0-cdc63809e72c",
+    "user_id": "af070e92-f0ef-4a66-8ed3-431ac7d7e7de",
     "curriculum": "",
-    "link_mediasocial": "/pauloamigoni",
-    "description": "PROGRAMADOR FULLSTACK OVERFLOW",
-    "profession_id": "f9202f92-facc-4ac4-a710-88985a1e91f7",
+    "link_mediasocial": "/jhonjoe",
+    "description": "ANALISTA TDD",
+    "profession_id": "497f0417-841d-48a7-beff-b883b1feb112",
     "profession_others": "",
-    "experience_time": "4",
+    "experience_time": "7 ANOS",
+    "user": {
+      "id": "af070e92-f0ef-4a66-8ed3-431ac7d7e7de",
+      "name": "Jhon Joe",
+      "email": "jhon@email.com",
+      "avatar": "15d1237cb3b30d3562dc-WhatsApp Image 2019-03-13 at 10.28.52.jpeg",
+      "phone": "551999999999",
+      "celphone": "551999999999",
+      "address": "ANTONIO DE ALMEIDA",
+      "city": "ARARAS",
+      "country": null,
+      "state": "SP",
+      "iswhats": true,
+      "avatar_url": "http://www.mandatrampo.com.br:3333/files/15d1237cb3b30d3562dc-WhatsApp Image 2019-03-13 at 10.28.52.jpeg"
+    },
     "professions": {
-      "id": "f9202f92-facc-4ac4-a710-88985a1e91f7",
-      "name": "Administrador de banco de dados"
+      "id": "497f0417-841d-48a7-beff-b883b1feb112",
+      "name": "ANALISTA DE TDD"
     }
-  },
+  }
   ...
 ]
 ```
 
-
 ---
 
-
-
-
-
-| Rota        | Método | Requer Autenticação |
-| ----------- | :----- | :-----------------: |
-| /services   | GET    |        :-1:         |
+| Rota      | Método | Requer Autenticação |
+| --------- | :----- | :-----------------: |
+| /services | GET    |        :-1:         |
 
 :speech_balloon: Lista todos Serviços Após Aprovação
-
 
 > Retorno
 
@@ -711,21 +698,13 @@ e Enviar input:name ( service_id ) -> ID do serviço que pretende adicionar a im
 ]
 ```
 
-
 ---
 
-
-
-
-
-
-
-| Rota                      | Método | Requer Autenticação |
-| ------------------------- | :----- | :-----------------: |
-| /curriculum/professions   | GET    |        :-1:         |
+| Rota                    | Método | Requer Autenticação |
+| ----------------------- | :----- | :-----------------: |
+| /curriculum/professions | GET    |        :-1:         |
 
 :speech_balloon: Lista todos Profissões Agrupada por CV
-
 
 > Retorno
 
@@ -747,23 +726,13 @@ e Enviar input:name ( service_id ) -> ID do serviço que pretende adicionar a im
 ]
 ```
 
-
 ---
 
-
-
-
-
-
-
-
-
-| Rota                   | Método | Requer Autenticação |
-| ---------------------- | :----- | :-----------------: |
-| /services/categories   | GET    |        :-1:         |
+| Rota                 | Método | Requer Autenticação |
+| -------------------- | :----- | :-----------------: |
+| /services/categories | GET    |        :-1:         |
 
 :speech_balloon: Lista todos Categorias Agrupada por Serviço
-
 
 > Retorno
 
@@ -785,21 +754,127 @@ e Enviar input:name ( service_id ) -> ID do serviço que pretende adicionar a im
 ]
 ```
 
+---
+
+| Rota                               | Método | Requer Autenticação |
+| ---------------------------------- | :----- | :-----------------: |
+| /curriculum/:curriculum_id/details | GET    |        :-1:         |
+
+:speech_balloon: Lista todos Categorias Agrupada por Serviço
+
+> Retorno
+
+```
+{
+  "id": "6dff0225-d491-43ec-b817-510c2a3e24c7",
+  "user_id": "886657e7-6b64-4295-b206-c2e231d1c8fe",
+  "curriculum": "",
+  "link_mediasocial": "/pauloamigoni",
+  "description": "PROGRAMADOR FULLSTACK OVERFLOW",
+  "profession_id": "f9202f92-facc-4ac4-a710-88985a1e91f7",
+  "profession_others": "",
+  "experience_time": "4",
+  "professions": {
+    "id": "f9202f92-facc-4ac4-a710-88985a1e91f7",
+    "name": "Administrador de banco de dados"
+  }
+}
+```
 
 ---
 
+| Rota                               | Método | Requer Autenticação |
+| ---------------------------------- | :----- | :-----------------: |
+| /curriculum/:curriculum_id/details | GET    |        :-1:         |
 
+:speech_balloon: Lista todos Categorias Agrupada por Serviço
 
+> Retorno
 
+```
+{
+  "id": "6dff0225-d491-43ec-b817-510c2a3e24c7",
+  "user_id": "886657e7-6b64-4295-b206-c2e231d1c8fe",
+  "curriculum": "",
+  "link_mediasocial": "/pauloamigoni",
+  "description": "PROGRAMADOR FULLSTACK OVERFLOW",
+  "profession_id": "f9202f92-facc-4ac4-a710-88985a1e91f7",
+  "profession_others": "",
+  "experience_time": "4",
+  "professions": {
+    "id": "f9202f92-facc-4ac4-a710-88985a1e91f7",
+    "name": "Administrador de banco de dados"
+  }
+}
+```
 
+---
 
+---
 
+| Rota                    | Método | Requer Autenticação |
+| ----------------------- | :----- | :-----------------: |
+| /services/:user_id/user | GET    |        :-1:         |
 
+:speech_balloon: Lista todos serviço do Usuário
 
+> Retorno
 
+```
+[
+  {
+    "id": "b187d99f-f1b8-4a8e-be39-e8ce1c58df9f",
+    "user_id": "af070e92-f0ef-4a66-8ed3-431ac7d7e7de",
+    "name": "ARRUMA CERTA CAR",
+    "description": "AUTO MECANICA E LAVAGEM EM GERAL",
+    "address": "Antonio de Cadastro, 710",
+    "city": "LIMEIRA",
+    "state": "SP",
+    "country": null,
+    "phone": "199922222266",
+    "celphone": "19992250066",
+    "email": "paulo.amigoni@gmail.com",
+    "site": "www.jhonjoe.com.br",
+    "link_facebook": "/jhonjoe",
+    "link_instagram": "/jhonjoe",
+    "opening_hours": "08hrs às 18hrs - horario de Brasilia",
+    "aproved": "S",
+    "denunciation": 0,
+    "iswhats": true,
+    "categories_id": "2e1cc22a-6393-45a0-b061-c17e0a9aafdd",
+    "categories_others": null,
+    "user": {
+      "id": "af070e92-f0ef-4a66-8ed3-431ac7d7e7de",
+      "name": "Jhon Joe",
+      "email": "jhon@email.com",
+      "avatar": "15d1237cb3b30d3562dc-WhatsApp Image 2019-03-13 at 10.28.52.jpeg",
+      "phone": "551999999999",
+      "celphone": "551999999999",
+      "address": "ANTONIO DE ALMEIDA",
+      "city": "ARARAS",
+      "country": null,
+      "state": "SP",
+      "iswhats": true,
+      "avatar_url": "http://www.mandatrampo.com.br:3333/files/15d1237cb3b30d3562dc-WhatsApp Image 2019-03-13 at 10.28.52.jpeg"
+    },
+    "categories": {
+      "id": "2e1cc22a-6393-45a0-b061-c17e0a9aafdd",
+      "name": "MECANICO"
+    },
+    "photo": [
+      {
+        "id": "319f3c27-6251-43db-9e02-d803dcf23645",
+        "services_id": "b187d99f-f1b8-4a8e-be39-e8ce1c58df9f",
+        "url": "5a3983ac154cc7872573-P_20190721_163128_vHDR_On.jpg",
+        "local_url": "http://www.mandatrampo.com.br:3333/files/5a3983ac154cc7872573-P_20190721_163128_vHDR_On.jpg"
+      }
+    ]
+  }
+  ...
+]
+```
 
-
-
+---
 
 [![Abra no Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=&uri=https%3A%2F%2Fgitlab.com%2Fmandatrampo%2Fbackend%2F-%2Fedit%2Fdevelopment%2FInsomnia.json)
 
