@@ -493,10 +493,6 @@ e Enviar input:name ( service_id ) -> ID do serviço que pretende adicionar a im
 
 
 
-
-
-
-
 | Rota        | Método | Requer Autenticação | Tipo de Autenticação |
 | ----------- | :----- | :-----------------: | :------------------: |
 | /curriculum | PUT    |     :thumbsup:      |    Bearer - Token    |
@@ -539,8 +535,258 @@ e Enviar input:name ( service_id ) -> ID do serviço que pretende adicionar a im
 
 
 
+### Rotas de Listagem
 
 
+
+
+| Rota        | Método | Requer Autenticação |
+| ----------- | :----- | :-----------------: |
+| /profession | GET    |        :-1:         |
+
+:speech_balloon: Lista todas as Profissões
+
+
+> Retorno
+
+```
+[
+  {
+    "id": "cb5c833e-8204-423d-a461-ce290ac2338b",
+    "name": "Abatedor"
+  },
+  {
+    "id": "e3279bef-2a45-4d7e-b257-ba5ed751b647",
+    "name": "Acabador de calçados"
+  }
+  ...
+]
+```
+
+
+---
+
+
+
+
+
+| Rota        | Método | Requer Autenticação |
+| ----------- | :----- | :-----------------: |
+| /categorie  | GET    |        :-1:         |
+
+:speech_balloon: Lista todas as Categorias
+
+
+> Retorno
+
+```
+[
+ {
+    "id": "5147e8bc-13df-45a4-9c02-d0868774c626",
+    "name": "DESENVOLVEDOR"
+  },
+  {
+    "id": "4187b34c-fcc5-4fa5-b672-457d7d49a933",
+    "name": "ARQUITETO DE SOFTWARE"
+  }
+  ...
+]
+```
+
+
+---
+
+
+
+
+
+| Rota        | Método | Requer Autenticação |
+| ----------- | :----- | :-----------------: |
+| /curriculum | GET    |        :-1:         |
+
+:speech_balloon: Lista todos CV
+
+
+> Retorno
+
+```
+[
+ {
+    "id": "6dff0225-d491-43ec-b817-510c2a3e24c7",
+    "user_id": "886657e7-6b64-4295-b206-c2e231d1c8fe",
+    "curriculum": "",
+    "link_mediasocial": "/pauloamigoni",
+    "description": "PROGRAMADOR FULLSTACK OVERFLOW",
+    "profession_id": "f9202f92-facc-4ac4-a710-88985a1e91f7",
+    "profession_others": "",
+    "experience_time": "4",
+    "professions": {
+      "id": "f9202f92-facc-4ac4-a710-88985a1e91f7",
+      "name": "Administrador de banco de dados"
+    }
+  },
+  ...
+]
+```
+
+
+---
+
+
+
+
+
+| Rota        | Método | Requer Autenticação |
+| ----------- | :----- | :-----------------: |
+| /services   | GET    |        :-1:         |
+
+:speech_balloon: Lista todos Serviços Após Aprovação
+
+
+> Retorno
+
+```
+[
+ {
+    "id": "0db9562b-97c1-4a4e-b2f3-a65ad7715c4c",
+    "user_id": "a470aa83-59c6-48ea-a43e-10f83189e094",
+    "name": "GERENTE DE PROJETOS",
+    "description": "GERENCIE SEUS PROJETOS DE TI",
+    "address": "TIRADENTES",
+    "city": "ARARAS",
+    "state": "SP",
+    "country": null,
+    "phone": "19992250066",
+    "celphone": "19992250066",
+    "email": "paulo.amigoni@gmail.com",
+    "site": "facaseufrete.com.br",
+    "link_facebook": null,
+    "link_instagram": null,
+    "opening_hours": "24HRS",
+    "aproved": "S",
+    "denunciation": 0,
+    "iswhats": true,
+    "categories_id": "f3b4347d-72e2-430f-aa04-176ed4976fc3",
+    "categories_others": null,
+    "user": {
+      "id": "a470aa83-59c6-48ea-a43e-10f83189e094",
+      "name": "EVERTON BARRAMANSA",
+      "email": "evertoni@email.com",
+      "avatar": "0ed9c4f871e9fc30c4d7-mandatrampo.png",
+      "phone": "55199999999999",
+      "celphone": "55199999999999",
+      "address": "ANTONIO DE ALMEIDA",
+      "city": "ARARAS",
+      "country": null,
+      "state": "SP",
+      "iswhats": true,
+      "avatar_url": "http://www.mandatrampo.com.br:3333/files/0ed9c4f871e9fc30c4d7-mandatrampo.png"
+    },
+    "categories": {
+      "id": "f3b4347d-72e2-430f-aa04-176ed4976fc3",
+      "name": "GERENTE DE PROJETO"
+    },
+    "photo": [
+      {
+        "id": "8ce140e9-9379-40f9-8545-670fd7db76c4",
+        "services_id": "0db9562b-97c1-4a4e-b2f3-a65ad7715c4c",
+        "url": "294658969bcaac375634-iStockmachinelearning592x333.jpg",
+        "local_url": "http://www.mandatrampo.com.br:3333/files/294658969bcaac375634-iStockmachinelearning592x333.jpg"
+      },
+      {
+        "id": "d8cca049-259d-46b9-9e1e-5b4f47e677ba",
+        "services_id": "0db9562b-97c1-4a4e-b2f3-a65ad7715c4c",
+        "url": "63876401e6b35e2b7c39-images (1).jpeg",
+        "local_url": "http://www.mandatrampo.com.br:3333/files/63876401e6b35e2b7c39-images (1).jpeg"
+      },
+      {
+        "id": "d2a104a3-7cac-4b6b-bd13-aa3ac8855d09",
+        "services_id": "0db9562b-97c1-4a4e-b2f3-a65ad7715c4c",
+        "url": "e6b2b8aa04022c1743ed-images.jpeg",
+        "local_url": "http://www.mandatrampo.com.br:3333/files/e6b2b8aa04022c1743ed-images.jpeg"
+      }
+    ]
+  },
+  ...
+]
+```
+
+
+---
+
+
+
+
+
+
+
+| Rota                      | Método | Requer Autenticação |
+| ------------------------- | :----- | :-----------------: |
+| /curriculum/professions   | GET    |        :-1:         |
+
+:speech_balloon: Lista todos Profissões Agrupada por CV
+
+
+> Retorno
+
+```
+[
+  {
+    "professions_name": "ANALISTA DE TDD",
+    "profession_id": "497f0417-841d-48a7-beff-b883b1feb112"
+  },
+  {
+    "professions_name": "Administrador de banco de dados",
+    "profession_id": "f9202f92-facc-4ac4-a710-88985a1e91f7"
+  },
+  {
+    "professions_name": "Administrador de edifícios",
+    "profession_id": "601af06e-592b-4bfa-90d7-b7ccfbad52b0"
+  }
+  ...
+]
+```
+
+
+---
+
+
+
+
+
+
+
+
+
+| Rota                   | Método | Requer Autenticação |
+| ---------------------- | :----- | :-----------------: |
+| /services/categories   | GET    |        :-1:         |
+
+:speech_balloon: Lista todos Categorias Agrupada por Serviço
+
+
+> Retorno
+
+```
+[
+  {
+    "categories_name": "GERENTE DE PROJETO",
+    "categories_id": "f3b4347d-72e2-430f-aa04-176ed4976fc3"
+  },
+  {
+    "categories_name": "MECANICA DE AUTOS",
+    "categories_id": "bd8b6fae-1095-48ec-a7b7-58f4a26d4923"
+  },
+  {
+    "categories_name": "TECNICO DE INFORMATICA",
+    "categories_id": "923883d0-d150-4baa-a38f-208a5c9f7e2b"
+  }
+  ...
+]
+```
+
+
+---
 
 
 
