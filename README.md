@@ -528,9 +528,169 @@ Obs: a Imagem vai ser apagada do Storage
 }
 ```
 
+
 ---
 
+| Rota            | Método | Requer Autenticação | Tipo de Autenticação |
+| --------------- | :----- | :-----------------: | :------------------: |
+| /services/valid | PUT    |     :thumbsup:      |    Bearer - Token    |
+
+:speech_balloon: Validar Serviço (Somente Administrador)
+
+Status:
+S = Aprovado / N = Falta aprovar / R = Reprovado / I = Inativo
+
+
+> Enviar
+
+```
+{
+	"id" :"6bb317ba-9125-4351-b24a-55e3e4096551",
+	"aproved": "S"
+}
+```
+
+> Retorno
+
+```
+  {
+  "id": "6bb317ba-9125-4351-b24a-55e3e4096551",
+  "user_id": "886657e7-6b64-4295-b206-c2e231d1c8fe",
+  "name": "GERENTE DE PROJETOS",
+  "description": "GERENCIE SEUS PROJETOS DE TI",
+  "address": "TIRADENTES",
+  "city": "LIMEIRA",
+  "state": "SP",
+  "country": null,
+  "phone": "19992250066",
+  "celphone": "19992250066",
+  "email": "paulo.amigoni@gmail.com",
+  "site": "facaseufrete.com.br",
+  "link_facebook": null,
+  "link_instagram": null,
+  "opening_hours": "24HRS",
+  "aproved": "N",
+  "denunciation": 0,
+  "iswhats": true,
+  "categories_id": "f3b4347d-72e2-430f-aa04-176ed4976fc3",
+  "categories_others": null,
+  "user": {
+    "id": "886657e7-6b64-4295-b206-c2e231d1c8fe",
+    "name": "PAULO AMIGONI",
+    "email": "amigoni@email.com",
+    "avatar": null,
+    "phone": "19992250066",
+    "celphone": "19992250066",
+    "address": "JOSE MEDEIROS",
+    "city": "Limeira",
+    "country": null,
+    "state": "SP",
+    "iswhats": true,
+    "level": "A",
+    "avatar_url": null
+  },
+  "categories": {
+    "id": "f3b4347d-72e2-430f-aa04-176ed4976fc3",
+    "name": "GERENTE DE PROJETO"
+  },
+  "photo": []
+}
+```
+
+---
+
+
+
+
+
 ### Rotas de Listagem
+
+
+
+
+
+---
+
+| Rota                     | Método | Requer Autenticação | Tipo de Autenticação |
+| ------------------------ | :----- | :-----------------: | :------------------: |
+| /services/:status/status | GET    |     :thumbsup:      |    Bearer - Token    |
+
+:speech_balloon: Lista Serviço Por Status
+
+Status:
+S = Aprovado / N = Falta aprovar / R = Reprovado / I = Inativo
+
+> Retorno (Array de Serviço)
+
+```
+[
+{
+    "id": "a528989c-9eea-4ab8-8ca1-947669c8606f",
+    "user_id": "4c392222-7699-422d-947c-f740c832e9cc",
+    "name": "AMIGONI DEVELOPMENT",
+    "description": "SERVIÇOS EM DESENVOLVIMENTO DE SOFTWARES",
+    "address": "Antonio de Cadastro, 710",
+    "city": "LIMEIRA",
+    "state": "SP",
+    "country": null,
+    "phone": "199922222266",
+    "celphone": "19992250066",
+    "email": "paulo.amigoni@gmail.com",
+    "site": "www.jhonny.com.br",
+    "link_facebook": "/jhonny",
+    "link_instagram": "/jhonnyBarbaro",
+    "opening_hours": "08hrs às 18hrs - horario de Brasilia",
+    "aproved": "S",
+    "denunciation": 0,
+    "iswhats": true,
+    "categories_id": "923883d0-d150-4baa-a38f-208a5c9f7e2b",
+    "categories_others": null,
+    "user": {
+      "id": "4c392222-7699-422d-947c-f740c832e9cc",
+      "name": "PAULO HENRIQUE AMIGONI",
+      "email": "paulo.amigoni@gmail.com",
+      "avatar": null,
+      "phone": "1999250066",
+      "celphone": "19992250066",
+      "address": "JOSE MEDEIROS - 53 - INOCOOP",
+      "city": "Limeira",
+      "country": null,
+      "state": "SP",
+      "iswhats": false,
+      "level": "A",
+      "avatar_url": null
+    },
+    "categories": {
+      "id": "923883d0-d150-4baa-a38f-208a5c9f7e2b",
+      "name": "TECNICO DE INFORMATICA"
+    },
+    "photo": [
+      {
+        "id": "8e1856a2-46a8-4dca-bdf9-c5caa8bfb3b4",
+        "services_id": "a528989c-9eea-4ab8-8ca1-947669c8606f",
+        "url": "d8e31d42ee7dadc0de07-devs.png",
+        "local_url": "http://www.mandatrampo.com.br:3333/files/d8e31d42ee7dadc0de07-devs.png"
+      },
+      {
+        "id": "495957ea-7c65-479c-97d6-6699c643124f",
+        "services_id": "a528989c-9eea-4ab8-8ca1-947669c8606f",
+        "url": "8efc9814a9b427ed398f-devs.png",
+        "local_url": "http://www.mandatrampo.com.br:3333/files/8efc9814a9b427ed398f-devs.png"
+      }
+    ]
+  },
+...
+]
+```
+
+---
+
+
+
+
+
+
+
 
 | Rota        | Método | Requer Autenticação |
 | ----------- | :----- | :-----------------: |
