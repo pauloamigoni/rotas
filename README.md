@@ -34,7 +34,9 @@
 - [x] Aprovação do Serviço - Redirecionamento para o Site
 - [x] Remoção de Fotos do Serviço
 - [x] Relacionamento de CV com a Profissão
-- [x] Recuperação de Senha
+- [x] Resetar Senha Usuário
+
+
 
 ## Como rodar a aplicação :arrow_forward:
 
@@ -97,6 +99,70 @@ Pronto, agora é possível acessar a aplicação a partir da rota http://localho
 Obs: vai ser gerado um ID ... O acesso deve ser pelo login e senha.
 
 ---
+
+
+| Rota             | Método | Requer Autenticação |
+| ---------------- | :----- | :-----------------: |
+| /password/forgot | POST   |        :-1:         |
+
+:speech_balloon: Reset de Senha por Login
+
+> Enviar
+
+```
+{
+ "login":"pauloamigoni"
+}
+```
+
+> Retorno
+
+```
+Vai retornar Status 204 se estiver tudo ok
+```
+
+Obs: vai ser enviado um email para o usuário do Login, é feito a recuperação de senha via email e token valido.
+
+---
+
+
+
+
+
+| Rota             | Método | Requer Autenticação |
+| ---------------- | :----- | :-----------------: |
+| /password/reset  | POST   |        :-1:         |
+
+:speech_balloon: Resete via email
+
+> Enviar
+
+```
+{
+ "password":"amigoni",
+ "password_confirmation":"amigoni",
+ "token": "8721b2dc-d24a-43cb-83c9-862645b50e3e"
+}
+```
+
+> Retorno
+
+```
+Vai retornar Status 204 se estiver tudo ok
+```
+
+Obs: Vai ser recebido um link por email que vai ter que ser repassado e aberto, a rota vai vaser exposta em
+http://www.mandatrampo.com.br:8080/reset-password?token=8721b2dc-d24a-43cb-83c9-862645b50e3e
+
+o Token  da URL deve ser retornado no Json acima
+
+---
+
+
+
+
+
+
 
 | Rota      | Método | Requer Autenticação |
 | --------- | :----- | :-----------------: |
@@ -369,7 +435,7 @@ Enviar o file como input:name ( avatar )
 > Enviar
 
 Enviar o file como input:name ( url )
-e Enviar input:name ( service_id ) -> ID do serviço que pretende adicionar a imagem
+e Enviar input:name ( services_id ) -> ID do serviço que pretende adicionar a imagem
 
 > Retorno
 
