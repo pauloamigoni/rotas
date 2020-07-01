@@ -34,6 +34,7 @@
 - [x] Aprovação do Serviço - Redirecionamento para o Site
 - [x] Remoção de Fotos do Serviço
 - [x] Relacionamento de CV com a Profissão
+- [x] Recuperação de Senha
 
 ## Como rodar a aplicação :arrow_forward:
 
